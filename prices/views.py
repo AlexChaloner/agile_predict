@@ -108,10 +108,6 @@ class StatsView(TemplateView):
 
         layout = dict(
             yaxis={"title": "Agile Price [p/kWh]"},
-            margin={
-                "r": 5,
-                "t": 50,
-            },
             height=800,
             template="plotly_dark",
         )
@@ -352,10 +348,6 @@ class GraphFormView(FormView):
 
         layout = dict(
             yaxis={"title": "Agile Price [p/kWh]"},
-            margin={
-                "r": 5,
-                "t": 50,
-            },
             legend=legend,
             height=height,
             template="plotly_dark",
@@ -389,6 +381,7 @@ class GraphFormView(FormView):
 
         context["graph"] = figure.to_html(
             config={
+                'scrollZoom': True,
                 "modeBarButtonsToRemove": [
                     "zoom",
                     "pan",
