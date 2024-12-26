@@ -352,6 +352,7 @@ class GraphFormView(FormView):
             height=height,
             template="plotly_dark",
             hovermode='x',
+            dragmode=False, # Much better scrolling experience on mobile
         )
 
         figure.update_layout(**layout)
